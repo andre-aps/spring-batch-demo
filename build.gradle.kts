@@ -1,3 +1,6 @@
+val lombokVersion = "1.18.36"
+val postgresqlVersion = "42.7.5"
+
 plugins {
     java
     id("org.springframework.boot") version "3.3.8"
@@ -19,10 +22,14 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-batch")
+    implementation("org.postgresql:postgresql:$postgresqlVersion")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.batch:spring-batch-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 }
 
 tasks.withType<Test> {
