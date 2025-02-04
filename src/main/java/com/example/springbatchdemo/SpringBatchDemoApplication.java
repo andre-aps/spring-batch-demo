@@ -1,4 +1,4 @@
-package com.example.spring_batch_demo;
+package com.example.springbatchdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

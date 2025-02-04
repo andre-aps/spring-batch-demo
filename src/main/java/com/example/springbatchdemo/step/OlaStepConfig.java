@@ -1,4 +1,4 @@
-package com.example.spring_batch_demo.step;
+package com.example.springbatchdemo.step;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;

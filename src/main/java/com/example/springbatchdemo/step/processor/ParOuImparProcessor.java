@@ -1,4 +1,4 @@
-package com.example.spring_batch_demo.step.processor;
+package com.example.springbatchdemo.step.processor;
 
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.function.FunctionItemProcessor;

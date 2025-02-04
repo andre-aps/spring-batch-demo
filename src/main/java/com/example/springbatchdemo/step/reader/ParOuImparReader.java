@@ -1,4 +1,4 @@
-package com.example.spring_batch_demo.step.reader;
+package com.example.springbatchdemo.step.reader;
 
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.support.IteratorItemReader;

@@ -1,4 +1,4 @@
-package com.example.spring_batch_demo.tasklet;
+package com.example.springbatchdemo.tasklet;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
