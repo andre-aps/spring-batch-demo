@@ -7,5 +7,7 @@ spring:
         password: password
         driver-class-name: org.postgresql.Driver
     batch:
+        job:
+            name: parOuImparJob
         jdbc:
             initialize-schema: always
