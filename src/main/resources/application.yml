@@ -8,6 +8,6 @@ spring:
         driver-class-name: org.postgresql.Driver
     batch:
         job:
-            name: parOuImparJob
+            name: arquivoLarguraFixaJob
         jdbc:
             initialize-schema: always
