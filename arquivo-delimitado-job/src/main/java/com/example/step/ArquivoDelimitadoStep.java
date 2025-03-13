@@ -1,6 +1,6 @@
-package com.example.springbatchdemo.step;
+package com.example.step;
 
-import com.example.springbatchdemo.domain.Cliente;
+import com.example.domain.Cliente;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-public class LeituraArquivoDelimitadoStepConfig {
+public class ArquivoDelimitadoStep {
 
     @Bean
-    public Step leituraArquivoDelimitadoStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
-        ItemReader<Cliente> leituraArquivoDelimitadoReader, ItemWriter<Cliente> leituraArquivoDelimitadoWriter) {
-        return new StepBuilder("leituraArquivoDelimitadoStep", jobRepository)
+    public Step arquivoDelimitadoItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
+        ItemReader<Cliente> arquivoDelimitadoItemReader, ItemWriter<Cliente> arquivoDelimitadoItemWriter) {
+        return new StepBuilder("arquivoDelimitadoStep", jobRepository)
             .<Cliente, Cliente>chunk(1, transactionManager)
-            .reader(leituraArquivoDelimitadoReader)
-            .writer(leituraArquivoDelimitadoWriter)
+            .reader(arquivoDelimitadoItemReader)
+            .writer(arquivoDelimitadoItemWriter)
             .build();
     }
 
