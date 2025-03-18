@@ -1,4 +1,4 @@
-package com.example.writer;
+package com.example.step.writer;
 
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
