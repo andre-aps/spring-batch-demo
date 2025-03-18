@@ -1,4 +1,4 @@
-package com.example.springbatchdemo.step;
+package com.example.step;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-public class OlaStepConfig {
+public class OlaStep {
 
     @Bean
-    public Step olaStep(JobRepository jobRepository, PlatformTransactionManager transactionManager, Tasklet imprimeOlaTasklet) {
+    public Step olaItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager, Tasklet olaTasklet) {
         return new StepBuilder("olaStep", jobRepository)
-            .tasklet(imprimeOlaTasklet, transactionManager)
+            .tasklet(olaTasklet, transactionManager)
             .build();
     }
 

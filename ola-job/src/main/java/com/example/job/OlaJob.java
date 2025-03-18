@@ -1,4 +1,4 @@
-package com.example.springbatchdemo.job;
+package com.example.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OlaJobConfig {
+public class OlaJob {
 
     @Bean
-    public Job olaJob(JobRepository jobRepository, Step olaStep) {
+    public Job olaItemJob(JobRepository jobRepository, Step olaStep) {
         return new JobBuilder("olaJob", jobRepository)
             .incrementer(new RunIdIncrementer())
             .start(olaStep)
