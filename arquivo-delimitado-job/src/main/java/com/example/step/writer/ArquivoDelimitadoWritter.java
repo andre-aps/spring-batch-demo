@@ -1,4 +1,4 @@
-package com.example.writer;
+package com.example.step.writer;
 
 import com.example.domain.Cliente;
 import org.springframework.batch.item.ItemWriter;

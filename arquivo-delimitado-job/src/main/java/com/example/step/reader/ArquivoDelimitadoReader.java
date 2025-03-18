@@ -1,4 +1,4 @@
-package com.example.reader;
+package com.example.step.reader;
 
 import com.example.domain.Cliente;
 import org.springframework.batch.core.configuration.annotation.StepScope;
