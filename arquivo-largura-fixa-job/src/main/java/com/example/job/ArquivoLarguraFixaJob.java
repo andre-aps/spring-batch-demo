@@ -1,4 +1,4 @@
-package com.example.springbatchdemo.job;
+package com.example.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ArquivoLarguraFixaJobConfig {
+public class ArquivoLarguraFixaJob {
 
     @Bean
-    public Job arquivoLarguraFixaJob(JobRepository jobRepository, Step leituraArquivoLarguraFixaStep) {
+    public Job arquivoLarguraFixaItemJob(JobRepository jobRepository, Step arquivoLarguraFixaStep) {
         return new JobBuilder("arquivoLarguraFixaJob", jobRepository)
             .incrementer(new RunIdIncrementer())
-            .start(leituraArquivoLarguraFixaStep)
+            .start(arquivoLarguraFixaStep)
             .build();
     }
 

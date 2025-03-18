@@ -1,15 +1,15 @@
-package com.example.springbatchdemo.step.writer;
+package com.example.step.writer;
 
-import com.example.springbatchdemo.domain.Cliente;
+import com.example.domain.Cliente;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class LeituraArquivoLarguraFixaWritter {
+public class ArquivoLarguraFixaWritter {
 
     @Bean
-    public ItemWriter<Cliente> leituraArquivoLarguraFixaItemWriter() {
+    public ItemWriter<Cliente> arquivoLarguraFixaItemWriter() {
         return items -> items.forEach(System.out::println);
     }
 

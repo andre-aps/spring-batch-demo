@@ -1,6 +1,6 @@
-package com.example.springbatchdemo.step.reader;
+package com.example.step.reader;
 
-import com.example.springbatchdemo.domain.Cliente;
+import com.example.domain.Cliente;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @Configuration
-public class LeituraArquivoLarguraFixaReader {
+public class ArquivoLarguraFixaReader {
 
     @Bean
     @StepScope
-    public FlatFileItemReader<Cliente> leituraArquivoLarguraFixaItemReader(@Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {
+    public FlatFileItemReader<Cliente> arquivoLarguraFixaItemReader(@Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {
         return new FlatFileItemReaderBuilder<Cliente>()
-            .name("leituraArquivoLarguraFixaItemReader")
+            .name("arquivoLarguraFixaItemReader")
             .resource(arquivoClientes)
             .fixedLength()
             .columns(new Range[]{new Range(1, 10), new Range(11, 20), new Range(21, 23), new Range(24, 43)})

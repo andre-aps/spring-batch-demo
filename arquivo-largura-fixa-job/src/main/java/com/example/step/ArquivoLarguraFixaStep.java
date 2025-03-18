@@ -1,6 +1,6 @@
-package com.example.springbatchdemo.step;
+package com.example.step;
 
-import com.example.springbatchdemo.domain.Cliente;
+import com.example.domain.Cliente;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-public class LeituraArquivoLarguraFixaStepConfig {
+public class ArquivoLarguraFixaStep {
 
     @Bean
-    public Step leituraArquivoLarguraFixaStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
-        ItemReader<Cliente> leituraArquivoLarguraFixaReader, ItemWriter<Cliente> leituraArquivoLarguraFixaWriter) {
-        return new StepBuilder("leituraArquivoLarguraFixaStep", jobRepository)
+    public Step arquivoLarguraFixaItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
+        ItemReader<Cliente> arquivoLarguraFixaItemReader, ItemWriter<Cliente> arquivoLarguraFixaItemWriter) {
+        return new StepBuilder("arquivoLarguraFixaStep", jobRepository)
             .<Cliente, Cliente>chunk(1, transactionManager)
-            .reader(leituraArquivoLarguraFixaReader)
-            .writer(leituraArquivoLarguraFixaWriter)
+            .reader(arquivoLarguraFixaItemReader)
+            .writer(arquivoLarguraFixaItemWriter)
             .build();
     }
 
