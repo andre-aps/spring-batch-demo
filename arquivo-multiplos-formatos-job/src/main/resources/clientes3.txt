@@ -1,0 +1,2 @@
+0,Ana,Silva,26,ana@test.com
+1,t1c1,Computador,5000.80
