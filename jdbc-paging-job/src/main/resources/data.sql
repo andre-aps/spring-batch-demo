@@ -1,0 +1,11 @@
+insert into cliente values('Joao', 'Silva', '30', 'joao@test.com');
+insert into cliente values('Maria', 'Silva', '30', 'maria@test.com')
+insert into cliente values('José', 'Silva', '30', 'jose@test.com')
+insert into cliente values('Ana', 'Silva', '30', 'ana@test.com')
+insert into cliente values('André', 'Silva', '30', 'andre@test.com')
+insert into cliente values('Marcos', 'Silva', '30', 'marcos@test.com')
+insert into cliente values('Rodrigo', 'Silva', '30', 'rodrigo@test.com')
+insert into cliente values('Isabela', 'Silva', '30', 'isabela@test.com')
+insert into cliente values('Mariana', 'Silva', '30', 'mariana@test.com')
+insert into cliente values('Pedro', 'Silva', '30', 'pedro@test.com')
+insert into cliente values('Lucas', 'Silva', '30', 'lucas@test.com')
