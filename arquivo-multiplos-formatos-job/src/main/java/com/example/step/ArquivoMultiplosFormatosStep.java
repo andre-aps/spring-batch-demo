@@ -16,11 +16,11 @@ public class ArquivoMultiplosFormatosStep {
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Bean
     public Step arquivoMultiplosFormatosItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
-        MultiResourceItemReader<Cliente> multiplosArquivosClienteTransacaoReader, ItemWriter arquivoMultiplosFormatosItemWritter) {
+        MultiResourceItemReader<Cliente> multiplosArquivosClienteTransacaoReader, ItemWriter arquivoMultiplosFormatosItemWriter) {
         return new StepBuilder("arquivoMultiplosFormatosStep", jobRepository)
             .<Cliente, Cliente>chunk(1, transactionManager)
             .reader(multiplosArquivosClienteTransacaoReader)
-            .writer(arquivoMultiplosFormatosItemWritter)
+            .writer(arquivoMultiplosFormatosItemWriter)
             .build();
     }
 

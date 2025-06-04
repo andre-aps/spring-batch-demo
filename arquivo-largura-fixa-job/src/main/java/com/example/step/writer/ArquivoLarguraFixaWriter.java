@@ -10,16 +10,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.WritableResource;
 
 @Configuration
-public class ArquivoDelimitadoWritter {
+public class ArquivoLarguraFixaWriter {
 
     @StepScope
     @Bean
-    public FlatFileItemWriter<Cliente> arquivoDelimitadoItemWriter(
+    public FlatFileItemWriter<Cliente> arquivoLarguraFixaItemWriter(
         @Value("#{jobParameters['arquivoClientesSaida']}") WritableResource arquivoClientesSaida) {
         return new FlatFileItemWriterBuilder<Cliente>()
-            .name("arquivoDelimitadoItemWriter")
+            .name("arquivoLarguraFixaItemWriter")
             .resource(arquivoClientesSaida)
-            .delimited()
+            .formatted()
+            .format("%-9s %-9s %-2s %-19s")
             .names("nome", "sobrenome", "idade", "email")
             .build();
     }
