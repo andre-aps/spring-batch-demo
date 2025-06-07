@@ -1,4 +1,4 @@
-package com.example.springbatchdemo;
+package com.example.step.reader;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.item.ItemReader;

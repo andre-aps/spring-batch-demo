@@ -1,4 +1,4 @@
-package com.example.springbatchdemo;
+package com.example.job;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.Job;
