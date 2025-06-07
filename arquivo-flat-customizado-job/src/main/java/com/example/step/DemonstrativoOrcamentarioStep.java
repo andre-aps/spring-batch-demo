@@ -1,6 +1,7 @@
 package com.example.step;
 
 import com.example.domain.GrupoLancamento;
+import com.example.step.writer.DemonstrativoOrcamentarioRodape;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -16,11 +17,12 @@ public class DemonstrativoOrcamentarioStep {
     @Bean
     public Step demonstrativoOrcamentarioItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
         MultiResourceItemReader<GrupoLancamento> demonstrativoOrcamentarioItemReader,
-        ItemWriter<GrupoLancamento> demonstrativoOrcamentarioItemWriter) {
+        ItemWriter<GrupoLancamento> demonstrativoOrcamentarioItemWriter, DemonstrativoOrcamentarioRodape rodapeCallback) {
         return new StepBuilder("demonstrativoOrcamentarioStep", jobRepository)
             .<GrupoLancamento, GrupoLancamento>chunk(1, transactionManager)
             .reader(demonstrativoOrcamentarioItemReader)
             .writer(demonstrativoOrcamentarioItemWriter)
+            .listener(rodapeCallback)
             .build();
     }
 
