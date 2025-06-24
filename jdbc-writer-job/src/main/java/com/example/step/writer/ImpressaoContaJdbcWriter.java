@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-public class ImpressaoContaWriter {
+public class ImpressaoContaJdbcWriter {
 
 	@Bean
-	public JdbcBatchItemWriter<Conta> impressaoContaItemWriter(DataSource dataSource) {
+	public JdbcBatchItemWriter<Conta> impressaoContaJdbcItemWriter(DataSource dataSource) {
 		return new JdbcBatchItemWriterBuilder<Conta>()
 			.dataSource(dataSource)
 			.sql("INSERT INTO conta (tipo, limite, cliente_id) VALUES (?, ?, ?)")

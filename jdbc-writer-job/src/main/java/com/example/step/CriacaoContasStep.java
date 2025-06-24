@@ -7,7 +7,7 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.support.CompositeItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -19,12 +19,12 @@ public class CriacaoContasStep {
 	public Step criacaoContasItemStep(JobRepository jobRepository, PlatformTransactionManager transactionManager,
 		ItemReader<Cliente> leituraClientesItemReader,
 		ItemProcessor<Cliente, Conta> geracaoContaItemProcessor,
-		ItemWriter<Conta> impressaoContaItemWriter) {
+		CompositeItemWriter<Conta> impressaoContaCompositeItemWriter) {
 		return new StepBuilder("criacaoContasStep", jobRepository)
 			.<Cliente, Conta>chunk(1, transactionManager)
 			.reader(leituraClientesItemReader)
 			.processor(geracaoContaItemProcessor)
-			.writer(impressaoContaItemWriter)
+			.writer(impressaoContaCompositeItemWriter)
 			.build();
 	}
 
