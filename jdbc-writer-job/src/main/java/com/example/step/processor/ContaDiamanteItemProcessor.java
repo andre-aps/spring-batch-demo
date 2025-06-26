@@ -8,7 +8,7 @@ import org.springframework.batch.item.ItemProcessor;
 public class ContaDiamanteItemProcessor implements ItemProcessor<Cliente, Conta> {
 
     @Override
-    public Conta process(Cliente cliente) throws Exception {
+    public Conta process(Cliente cliente) {
         Conta conta = new Conta();
         conta.setClienteId(cliente.getEmail());
         conta.setTipo(TipoConta.DIAMANTE);

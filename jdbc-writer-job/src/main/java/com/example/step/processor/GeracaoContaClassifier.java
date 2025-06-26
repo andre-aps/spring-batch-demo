@@ -12,11 +12,12 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class GeracaoContaClassifier implements Classifier<Cliente, ItemProcessor<?, ? extends Conta>> {
 
-    private static final Map<TipoConta, ItemProcessor<Cliente, Conta>> processadores = new HashMap<TipoConta, ItemProcessor<Cliente, Conta>>() {{
+    private static final Map<TipoConta, ItemProcessor<Cliente, Conta>> processadores = new HashMap<>() {{
         put(TipoConta.PRATA, new ContaPrataItemProcessor());
         put(TipoConta.OURO, new ContaOuroItemProcessor());
         put(TipoConta.PLATINA, new ContaPlatinaItemProcessor());
         put(TipoConta.DIAMANTE, new ContaDiamanteItemProcessor());
+        put(TipoConta.INVALIDA, new ContaInvalidaItemProcessor());
     }};
 
     @Override
